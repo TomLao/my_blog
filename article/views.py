@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
 from django.http import HttpResponse
 from article.models import Article
 from datetime import datetime
+from django.http import Http404
 #views用来处理程序逻辑, 然后呈现到template(一般为GET方法, POST方法略有不同)
 
 # Create your views here.
@@ -24,3 +26,11 @@ from datetime import datetime
 def home(request):
     post_list=Article.objects.all() #获取全部的Article对象
     return render(request, 'home.html',{'post_list':post_list})
+
+#单条查找，id是博文的唯一标识，用id对数据库查找
+def detail(request, id):
+    try:
+        post=Article.objects.get(id=str(id))
+    except Article.DoesNotExist:
+        raise Http404
+    return render(request,'post.html',{'post':post})
