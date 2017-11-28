@@ -25,7 +25,7 @@ SECRET_KEY = '*xjdk$7)nfsx+t=1n^)8=!uwm2)@80(-%2u^t#mugghmx4^v*j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['120.79.14.252','tomlao.xin','127.0.0.1']
+ALLOWED_HOSTS = ['tomlao.xin','www.tomlao.xin','127.0.0.1']
 
 
 # Application definition
@@ -53,12 +53,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'my_blog.urls'
 
-#添加界面,后台
+#添加后台界面
 from django.conf import global_settings
 BOOTSTRAP_ADMIN_SIDEBAR_MENU = True
 
 #第一个前端模板
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
