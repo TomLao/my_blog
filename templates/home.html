@@ -3,21 +3,22 @@
 {% block content %}
 <div class="posts">
     {% for post in post_list %}
-        <section class="post">
-            <header class="post-header">
-                <h2 class="post-title">{{ post.title }}</h2>
+    <section class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="{% url "detail" id=post.id %}">{{ post.title }}</a></h2>
+            <p class="post-meta">
+                Time:  <a class="post-author" href="#">{{ post.date_time |date:"Y /m /d"}}</a> <a class="post-category post-category-js" href="#">{{ post.category }}</a>                    </p>
+        </header>
 
-                    <p class="post-meta">
-                        Time:  <a class="post-author" href="#">{{ post.date_time }}</a> <a class="post-category post-category-js" href="#">{{ post.category }}</a>
-                    </p>
-            </header>
-
-                <div class="post-description">
-                    <p>
-                        {{ post.content }}
-                    </p>
-                </div>
-        </section>
+        <div class="post-description">
+            <p>
+                {{ post.content }}
+            </p>
+        </div>
+        <!--当点击这个文章题目时, 会将对应的数据库对象的id传入的url中, 类似于url传参, 不记得的同学可以重新回到前几页翻一下. 这里将数据库对象唯一的id传送给url设置, -->
+        <!--url取出这个id给对应的view中的函数逻辑当做参数. 这样这个id就传入对应的参数中被使用-->
+        <a class="pure-button" href="{% url "detail" id=post.id %}">Read More >>> </a>
+    </section>
     {% endfor %}
 </div><!-- /.blog-post -->
 {% endblock %}

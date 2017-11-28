@@ -22,9 +22,11 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
-    #按照文档的firstapp，这里需要article中建一个urls.py来中转调用
-    url(r'^$', include('article.urls')),
+    #按照文档的firstapp，这里需要article中建一个urls.py来中转调用，输出全部
+    url(r'', include('article.urls')),
 
+    #单条详情
+    # url()
     # url(r'^test/$', include("article.urls"),name='test'),
     # url(r'^$', include('article.views.home')),
     # url(r'',include('article.urls',namespace='article'))
