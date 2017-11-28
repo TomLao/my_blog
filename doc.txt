@@ -1,0 +1,17 @@
+# <!--
+# 其中
+# - {% for <element> in <list> %}与{% endfor %}成对存在, 这是template中提供的for循环tag
+# - {% if <elemtnt> %} {% else %} {% endif %}是template中提供的if语句tag
+# - template中还提供了一些过滤器
+# -->
+#<!--{% block content %} {% endblock %}字段用来被其他继承这个基类模板进行重写-->
+
+特别注意：
+要用python3,pip3,最新的django框架
+不管哪一步都要完整写 python3 或 pip3
+
+步骤：
+安装python3：sudo apt-get install python3
+安装pip3:sudo apt install python3-pip
+安装django框架：pip3 install django
+
