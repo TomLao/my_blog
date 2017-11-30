@@ -6,6 +6,8 @@
 # -->
 #<!--{% block content %} {% endblock %}字段用来被其他继承这个基类模板进行重写-->
 
+主要过程：https://andrew-liu.gitbooks.io/django-blog/duo_8bf42c_markdown_he_dai_ma_gao_liang.html
+
 特别注意：
 要用python3,pip3,最新的django框架
 不管哪一步都要完整写 python3 或 pip3
@@ -15,3 +17,5 @@
 安装pip3:sudo apt install python3-pip
 安装django框架：pip3 install django
 
+代码高亮要安装Pygments：pip3 install Pygments
+markdown后台在线视图:http://blog.wish7.xyz/2016/09/05/%E6%90%AD%E5%BB%BADjango%E5%8D%9A%E5%AE%A2%EF%BC%886%EF%BC%89%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E5%8F%8A%E5%90%8E%E5%8F%B0Markdown%E7%BC%96%E8%BE%91%E5%99%A8/
