@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'article', #app名称
     'article.templatetags.custom_markdown',
+    'pagedown', #后台markdown
 ]
 
 MIDDLEWARE = [
