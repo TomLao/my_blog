@@ -122,8 +122,8 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
-
+# USE_TZ = True
+TIME_ZONE = 'Asia/Shanghai' #不使用自带上面条语句，否则差8小时
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
