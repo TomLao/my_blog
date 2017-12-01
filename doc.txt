@@ -19,3 +19,6 @@
 
 代码高亮要安装Pygments：pip3 install Pygments
 markdown后台在线视图:http://blog.wish7.xyz/2016/09/05/%E6%90%AD%E5%BB%BADjango%E5%8D%9A%E5%AE%A2%EF%BC%886%EF%BC%89%E4%BB%A3%E7%A0%81%E9%AB%98%E4%BA%AE%E5%8F%8A%E5%90%8E%E5%8F%B0Markdown%E7%BC%96%E8%BE%91%E5%99%A8/
+
+后台时区差8小时问题：settings.py修改USE_TZ = True为TIME_ZONE = 'Asia/Shanghai'
+http://blog.51cto.com/linuxtech/1865546
