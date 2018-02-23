@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+a {
+    color: inherit;
+    outline: none;
+    text-decoration: none;
+}
+main, article {
+    width: 100%;
+    height: 100%;
+}
+nav ul, li{
+    list-style: none;
+}
+
+/*  侧边栏 ------------------------------*/
+.left-side{
+    width:25%;
+    padding:30px 0px 30px 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+.left-side .inner{
+    width: 200px;
+    margin: 0;
+}
+.side-logo{
+    line-height: 0;
+    margin: 0 0 50px;
+}
+.side-logo a:hover{
+    opacity: 0.6;
+    transition: 0.4s;   /*透明化过度*/
+}
+
+/*  菜单  ---------------------------------*/
+.side-global-menu{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.side-global-menu li{
+    margin-bottom: 50px;
+}
+.side-global-menu a {
+    color: inherit;
+    opacity: 1;
+    transition: 0.3s;
+}
+.side-global-menu a:hover{
+    opacity: 0.6;
+    transition: 0.3s;
+}
+/*  简讯图标更新，使用before和after类  ----*/
+.side-news-update {
+    color: #3d3e3f;
+    font-size: 12px;
+    font-weight: bold;
+}
+.side-news-update:before {
+    background: #3d3e3f;
+    content: "";
+    width: 10px;
+    height: 1px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 4px 0 6px;
+}
+.side-news-update:after {
+    color: #fff;
+    background: #ff2121;
+    content: "NEW!";
+    display: inline-block;
+    font-size: 10px;
+    line-height: 1;
+    transform: scale(0.8);  /* !important 用transform改变大小*/
+    padding: 3px 4px;
+    margin-left: 3px;
+}
+
+/*  分享块 -----------------------------*/
+.side-share-menu{
+    margin: 150px 0 0;
+}
+.side-share-menu .wx-share{
+    float: right;
+    background-image: url("../images/new_wx_icon.PNG");
+    background-size: 23px 23px;
+    background-repeat:no-repeat;
+    width: 23px;
+    height:23px;
+}
+.side-share-menu .qq-share{
+    float: right;
+    background-image: url("../images/new_qq_icon.PNG");
+    background-size: 23px 23px;
+    background-repeat:no-repeat;
+    width: 23px;
+    height:23px;
+}
+.side-share-menu ul{
+    font-size: 0;
+    overflow: hidden;
+}
+.side-share-menu li {
+    white-space: nowrap;
+    display: inline-block;
+    line-height: 0;
+    margin-right: 18px;
+}
+.side-share-menu a:hover {
+    opacity: 0.6;
+    transition: 0.2s;
+}
+.side-share-title {
+    font-size: 13px;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin: 0 0 20px;
+}
+
+/*  页脚  --------------------------------------------*/
+.footer {
+    line-height: 0;
+    position: relative;
+    white-space: nowrap;
+    padding: 160px 0 0 60px;
+}
+.footer .footer-inner {
+    position: absolute;
+    left: 60px;
+    bottom: 50px;
+    padding-top: 100px;
+}
+/*  页脚声明和人物图书自动生成 ---------------*/
+.footer-chara{
+    text-align: right;
+    line-height: 0;
+}
+.footer-chara img.pcv {
+    display: inline !important;
+    margin-bottom: -10px;
+}
+.footer-chara-box {
+    text-align: right;
+    display: none;
+}
+.footer-chara-box.on {
+    display: block;
+}
+.footer-menu {
+    overflow: hidden;
+    padding: 30px 0;
+}
+.footer-menu li {
+    font-size: 11px;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    float: left;
+    margin: 0 25px 0 0;
+}
+.footer-btn-first a, .footer-menu a {
+    opacity: 1;
+    transition: 0.2s;
+}
+.footer-btn-first a:hover, .footer-menu a:hover {
+    opacity: 0.6;
+    transition: 0.2s;
+}
+.footer-copyright {
+    color: #82909a;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}
+
+
+/*===============================================*/
+/*回到顶部实现  css*/
+/*===============================================*!*/
+#back-to-top {
+    cursor: pointer;
+    position: fixed;
+    right: 15px;
+    top:-900px;
+    z-index: 2;
+    width: 70px;
+    height: 900px;
+    /*background: url(../images/back_to_top.png);*/
+    transition: all .5s ease-in-out;
+    opacity: 1;
+}
+
+/*光标换图片*/
+body {
+    cursor: url(../images/cursor.ico),auto;
+}

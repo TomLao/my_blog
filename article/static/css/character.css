@@ -1,0 +1,452 @@
+@charset "UTF-8";
+/*--------------------------------------------------
+    资讯页头主体部分css
+--------------------------------------------------*/
+.l-container {
+    display: table;
+    width: 100%;
+    min-width: 1300px;
+    overflow: hidden;
+}
+.l-container-left {
+    max-width: 320px;
+    min-width: 90px;
+    box-sizing: border-box;
+    display: table-cell;
+    vertical-align: top;
+}
+.l-container-right {
+    display: table-cell;
+    vertical-align: top;
+}
+.l-page {
+    width: 980px;
+    margin: 0 auto;
+}
+.l-page .inner {
+    padding-top: 115px;
+}
+
+/*--------------------------------------------------
+    标题字体部分css
+--------------------------------------------------*/
+.page-title {
+    margin: 0 auto 58px;
+    line-height: 1;
+    text-align: center;
+}
+.page-title .head {
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    display: block;
+}
+.page-title .subhead {
+    display: block;
+    margin: 12px 0 0;
+    color: #82909a;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+/*=====================================================================
+::before和::after的content
+用于在css渲染中向元素逻辑上的头部或尾部添加内容。
+这些添加不会出现在DOM中，不会改变文档内容，不可复制，仅仅是在css渲染层加入。
+========================================================================*/
+/*头部字体*/
+.l-container-right:before {
+    content: "角色";
+    position: absolute;
+    top: -28px;
+    right: -5px;
+    z-index: -10;
+    color: #dde0e4;
+    font-size: 151px;
+    font-weight: 100;
+    letter-spacing: -0.5px;
+    transform: skewX(-12deg);   /*字体倾斜*/
+}
+
+
+/* ==============================================
+ * [PC] Character
+ *
+ * 主体部分
+ *
+ * ============================================== */
+.footer-chara {
+    display: none;
+    visibility: hidden;
+}
+
+/* ==============================================
+ * 字符布局
+ *
+ * ============================================== */
+.character-top {
+    width: 100%;
+    height: 100%;
+    min-height: 800px;
+    position: relative;
+}
+
+.character-detail {
+    position: relative;
+    display: none;
+}
+.character-detail:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* ==============================================
+ * 人物詳細
+ *
+ * ============================================== */
+.character-menu {
+    font-size: 0;
+    text-align: center;
+}
+.character-menu li {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    width: 140px;
+    margin: 0 10px 0 0;
+    border-bottom: 3px solid #82909a;
+}
+.character-menu li:last-child {
+    margin-right: 0;
+}
+.character-menu li:after {
+    content: "";
+    display: block;
+    background: #5f72ff;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: 0.3s;
+}
+.character-menu li.current {
+    pointer-events: none;
+}
+.character-menu li.current:after {
+    pointer-events: none;
+    width: 100%;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+.character-menu li:hover:after {
+    pointer-events: none;
+    width: 100%;
+    transition: 0.3s;
+}
+.character-menu a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 0 20px;
+    box-sizing: border-box;
+}
+.character-menu .name {
+    font-feature-settings: "palt";
+    display: block;
+    color: #3d3e3f;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    margin: 0;
+}
+.character-menu .name.small {
+    font-size: 12px;
+}
+.character-menu .cv {
+    display: block;
+    color: #82909a;
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+}
+
+/*切换颜色*/
+/*.character-menu-tomoya:after {*/
+    /*background: #5f72ff !important;*/
+/*}*/
+
+/*.character-menu-megumi:after {*/
+    /*background: #ff5676 !important;*/
+/*}*/
+
+/*.character-menu-eriri:after {*/
+    /*background: #a9eb1a !important;*/
+/*}*/
+
+/*.character-menu-utaha:after {*/
+    /*background: #ff3535 !important;*/
+/*}*/
+
+/*.character-menu-izumi:after {*/
+    /*background: #00d8ff !important;*/
+/*}*/
+
+/*.character-menu-michiru:after {*/
+    /*background: #a759ff !important;*/
+/*}*/
+
+.character-paging {
+    display: table;
+    margin: 0 auto;
+    padding: 20px 0 30px;
+}
+.character-paging li {
+    font-size: 12px;
+    vertical-align: middle;
+}
+.character-paging a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+.character-paging a:hover {
+    opacity: 0.6;
+    transition: 0.2s;
+}
+.character-paging .prev,
+.character-paging .next {
+    width: 16px;
+    height: 16px;
+    display: table-cell;
+}
+/*箭头标志*/
+.character-paging .prev a {
+    background: url("../images/character/chara_arrow_l.png") no-repeat center;
+    background-size: 16px auto;
+}
+.character-paging .next a {
+    background: url("../images/character/chara_arrow_r.png") no-repeat center;
+    background-size: 16px auto;
+}
+.character-paging .back {
+    font-weight: bold;
+    padding: 0 15px;
+}
+
+.character-detail-box {
+    display: none;
+    clear: both;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.character-detail-box:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.character-detail-box-rt,
+.character-detail-box-rb,
+.character-detail-box-lt {
+    position: relative;
+}
+
+.character-detail-box-rt {
+    width: 425px;
+    float: right;
+}
+
+.character-detail-box-rb {
+    width: 425px;
+    float: right;
+    clear: right;
+}
+
+.character-detail-box-lt {
+    width: 550px;
+    float: left;
+}
+
+.character-detail-name {
+    font-size: 60px;
+    font-weight: 100;
+    white-space: nowrap;
+    line-height: 74px;
+    margin: 0 0 20px;
+}
+
+.character-detail-name-en {
+    color: #82909a;
+    font-size: 20px;
+    /*font-style: italic;*/
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    margin: 0 0 30px;
+}
+
+.character-detail-cv {
+    font-size: 16px;
+    /*font-weight: bold;*/
+    line-height: 1;
+    letter-spacing: 0.1em;
+    margin: 0 0 20px;
+}
+.character-detail-cv span {
+    text-align: center;
+    font-size: 12px;
+    /*font-weight: bold;*/
+    /*border-radius: 4px;*/
+    border: 1px solid #3d3e3f;
+    display: inline-block;
+    padding: 1px 2px 2px 3px;
+    margin-right: 10px;
+    vertical-align: text-bottom;
+}
+
+.character-detail-text {
+    font-size: 14px;
+    line-height: 28px;
+    text-align: justify;
+    margin: 30px 0 20px;
+}
+
+.btn-ura {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    border: 1px solid #3d3e3f;
+    display: block;
+    padding: 30px 0 34px;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: 0.1s;   /*过度时间*/
+}
+.btn-ura:hover {
+    color: #fff;
+    background-color: #3d3e3f;
+    transition: all 0.1s;
+}
+
+.ura-box {
+    pointer-events: none;
+    background: url("../images/character/chara_bg_ura.png") no-repeat 0 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: left;
+    width: 310px;
+    height: 81px;
+    padding: 14px 50px 0 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.3s;
+}
+.ura-box:after {
+    content: "";
+    background: url("../images/character/chara_btn_close.png") no-repeat 0 0;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 33px;
+    right: 14px;
+    z-index: 1;
+    opacity: 1;
+    transition: 0.2s;
+}
+.ura-box:hover:after {
+    opacity: 0.5;
+    transition: 0.2s;
+}
+
+.character-detail-info {
+    font-size: 14px;
+    line-height: 28px;
+    text-align: left;
+    margin: 0 0 50px;
+}
+.character-detail-info th {
+    width: 50px;
+}
+.character-detail-info th, .character-detail-info td {
+    position: relative;
+    padding: 0 0 16px;
+}
+.character-detail-info td.on .ura-box {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/*使区域块的鼠标功能失效，因为有些图片太高了*/
+.character-detail-visual {
+    pointer-events: none;
+}
+
+/*人物小标签块*/
+.character-detail-batch {
+    position: absolute;
+    left: 32px;
+    top: 521px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* ==============================================
+ * キャラクター詳細 -- 倫也
+ * ============================================== */
+.character-detail-visual {
+    width: 459px;
+    height: 1139px;
+    position: relative;
+    left: -20px;
+}
+.character-detail-visual span {
+    display: block;
+}
+.character-detail-visual .main {
+    /*background: url("../images/character/chara_tomoya_vsl.png") no-repeat 0 0;*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: -125px;
+    z-index: 0;
+    opacity: 1;
+}
+.character-detail-visual.on .main {
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.character-detail-visual.on .size {
+    width: 100%;
+    transition: 1s;
+}
+.character-detail-msg {
+    overflow: hidden;
+    width: 110px;
+    height: 1031px;
+    position: absolute;
+    top: 0;
+    left: 414px;
+    z-index: 2;
+}
