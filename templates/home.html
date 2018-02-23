@@ -24,7 +24,7 @@
 
                                             {{ post.title }}<hr>
                                             <p class="short-intro">
-                                                简介：{{ post.content|truncatewords:2 }}<!--参数为显示的长度-->
+                                                简介：{{ post.content|truncatewords:3 }}<!--参数为显示的长度-->
                                             </p>
 
                                         </a>
@@ -36,7 +36,7 @@
                                         <div class="l-news-side">
                                             <p class="news-date">{{ post.date_time |date:"Y.m.d"}}</p>
                                             <p class="pcv information">
-                                                分类于：<a style="color: #fff; background-color:red;padding:1px 2px 0px 1px;border-radius:5px" href="{% url 'search_tag' tag=post.category %}">{{ post.category }}</a>
+                                                分类于：<a style="color: #fff; background-color:red;padding:3px 6px 2px 5px;border-radius:3px" href="{% url 'search_tag' tag=post.category %}">{{ post.category }}</a>
                                             </p>
                                         </div>
                                         <div class="col-md-offset-3">
@@ -55,6 +55,24 @@
         </div>
     </div>
 </div>
+
+
+<!--分页显示-->
+{% if post_list.object_list and post_list.paginator.num_pages > 1 %}
+<div>
+    <ul class="pager">
+    {% if post_list.has_previous %}
+        <li><a href="?page={{ post_list.previous_page_number }}">上一页</a></li>
+    {% endif %}
+
+    {% if post_list.has_next %}
+        <li><a href="?page={{ post_list.next_page_number }}">下一页</a></li>
+    {% endif %}
+    </ul>
+</div>
+{% endif %}
+
+
 <script src="/static/js/news.js"></script>
 
 {% endblock %}
