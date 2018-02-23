@@ -1,17 +1,57 @@
+<!--
+=====================================================
+归档，显示时间
+=====================================================
+-->
+
 {% extends "base.html" %}
-
+{% load custom_markdown %}
 {% block content %}
-<div class="posts">
-    {% for post in post_list %}
-        <section class="post">
-            <header class="post-header">
-                <h2 class="post-title"><a href="{% url "detail" id=post.id %}">{{ post.title }}</a></h2>
+<div class="jq22-container">
+    <div class="demo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <!--<section>放这里不会可以同时开着两个手风琴-->
+                        <!--在主页循环显示文章，在article/views。py中设置了post_list为5条一页-->
+                        <section>
+                            {% for post in post_list %}
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="heading{{post.id}}">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{post.id}}" aria-expanded="true" aria-controls="collapse{{post.id}}">
 
-                    <p class="post-meta">
-                        Time:  <a class="post-author" href="#">{{ post.date_time |date:"Y /m /d"}}</a> <a class="post-category post-category-js" href="{% url "search_tag" tag=post.category %}">{{ post.category }}</a>
-                    </p>
-            </header>
-        </section>
-    {% endfor %}
-</div><!-- /.blog-post -->
+                                            {{ post.title }}<hr>
+                                            <p class="short-intro">
+                                                时间：{{ post.date_time |date:"Y.m.d"}}&nbsp;&nbsp;&nbsp;&nbsp;分类于：{{ post.category }}<!--归档显示时间和分类-->
+                                            </p>
+
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse{{post.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{post.id}}">
+                                    <div class="panel-body">
+                                        <!--更新日期块-->
+                                        <div class="l-news-side">
+                                            <p class="news-date">{{ post.date_time |date:"Y.m.d"}}</p>
+                                            <p class="pcv information">分类于：{{ post.category }}</p>
+                                        </div>
+                                        <div class="col-md-offset-3">
+                                            <p>
+                                                {{ post.content|custom_markdown }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

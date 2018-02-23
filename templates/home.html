@@ -35,7 +35,7 @@
                                         <!--更新日期块-->
                                         <div class="l-news-side">
                                             <p class="news-date">{{ post.date_time |date:"Y.m.d"}}</p>
-                                            <p class="pcv information">{{ post.category }}</p>
+                                            <p class="pcv information">分类于：{{ post.category }}</p>
                                         </div>
                                         <div class="col-md-offset-3">
                                             <p>
@@ -53,4 +53,6 @@
         </div>
     </div>
 </div>
+<script src="/static/js/news.js"></script>
+
 {% endblock %}
