@@ -16,6 +16,12 @@ urlpatterns = [
     #归档
     url(r'^archives/$', views.archives, name = 'archives'),
 
+    # 标签检索
+    url(r'^tag(?P<tag>\w+)/$', views.search_tag, name = 'search_tag'),
+
+    # 搜索
+    url(r'^search/$',views.blog_search, name = 'search'),
+
     # url(r'^(?P<my_args>\d+)/$',views.detail,name='detail'),
     # url(r'^test/$',views.test,name='test'),
 ]

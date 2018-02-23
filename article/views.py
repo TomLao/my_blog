@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from article.models import Article
 from datetime import datetime
@@ -60,3 +60,29 @@ def archives(request) :
     except Article.DoesNotExist :
         raise Http404
     return render(request,'archives.html',{'post_list':post_list,'error':False})
+
+
+# 标签分类，相当于对tag查询
+def search_tag(request, tag):
+    try:
+        post_list = Article.objects.filter(category__iexact = tag)
+    except Article.DoesNotExist:
+        raise Http404
+    return render(request, 'tag.html', {'post_list':post_list})
+
+
+# 搜索逻辑功能
+def blog_search(request):
+    if 's' in request.GET:
+        s = request.GET['s']
+        if not s:
+            return render(request,'home.html')
+        else:
+            post_list = Article.objects.filter(title__icontains = s)
+            if len(post_list) == 0 :
+                return render(request,'archives.html', {'post_list' : post_list,
+                                                    'error' : True})
+            else :
+                return render(request,'archives.html', {'post_list' : post_list,
+                                                    'error' : False})
+    return redirect('/')

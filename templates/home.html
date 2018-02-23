@@ -35,7 +35,9 @@
                                         <!--更新日期块-->
                                         <div class="l-news-side">
                                             <p class="news-date">{{ post.date_time |date:"Y.m.d"}}</p>
-                                            <p class="pcv information">分类于：{{ post.category }}</p>
+                                            <p class="pcv information">
+                                                分类于：<a style="color: #fff; background-color:red;padding:1px 2px 0px 1px;border-radius:5px" href="{% url 'search_tag' tag=post.category %}">{{ post.category }}</a>
+                                            </p>
                                         </div>
                                         <div class="col-md-offset-3">
                                             <p>

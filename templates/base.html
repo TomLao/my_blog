@@ -20,12 +20,12 @@
 <header>
     <div class="left-side">
         <div class="inner">
-            <h1 class="side-logo"><a href="index.html"><img src="/static/images/side_logo.png" alt=""></a></h1>
+            <h1 class="side-logo"><a href="/"><img src="/static/images/side_logo.png" alt=""></a></h1>
             <div class="left-side-menu-box">
                 <!--左侧导航栏-->
                 <nav class="side-global-menu">
                     <ul>
-                        <li class="news"><a href="index.html">资讯简报 <span class="side-news-update">02.14</span> </a></li>
+                        <li class="news"><a href="/">资讯简报 <span class="side-news-update">02.14</span> </a></li>
                         <li class="schedule"><a href="/archives/">归档</a></li>
                         <li class="character"><a href="/static/character.html">角色简介</a></li>
                         <li class="staff"><a href="staff.html">制作人员</a></li>
@@ -34,6 +34,14 @@
                         <li class="about-me"><a href="about.html">关于我和这个作品</a></li>
                     </ul>
                 </nav>
+
+                <!--搜索框-->
+                <div class="input-group">
+                    <form class="input-group" action="/search/" method="get">
+                        <input class="form-control input-lg" type="text" name="s" placeholder="回车搜索">
+                    </form>
+                </div>
+
                 <!--下边栏-->
                 <nav class="side-share-menu">
                     <p class="side-share-title">分享:</p>
@@ -57,15 +65,15 @@
         <div class="l-container-right">
             <div class="l-page">
                 <!--<section>-->
-                    <div class="inner">
-                        <h2 class="page-title"><span class="head">NEWS</span><span class="subhead">最新资讯</span></h2>
-                        <div class="l-news">
+                <div class="inner">
+                    <h2 class="page-title"><span class="head">NEWS</span><span class="subhead">最新资讯</span></h2>
+                    <div class="l-news">
 
-                            {% block content %}
-                            {% endblock %}
+                        {% block content %}
+                        {% endblock %}
 
-                        </div>
                     </div>
+                </div>
                 <!--</section>-->
             </div>
         </div>
