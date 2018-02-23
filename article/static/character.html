@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>角色</title>
+    <script src="js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/character.css">
+    <!--<link rel="stylesheet" href="css/news.css">-->
+    <!--<link href="css/bootstrap.css" rel="stylesheet">-->
+    <!--<link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <!--<script src="js/bootstrap.js"></script>-->
+</head>
+<body>
+<!--TODO:精简三围-->
+<!--
+===============================================
+头部、侧边导航栏
+===============================================
+-->
+<header>
+    <div class="left-side">
+        <div class="inner">
+            <h1 class="side-logo"><a href="index.html"><img src="images/side_logo.png" alt=""></a></h1>
+            <div class="left-side-menu-box">
+                <!--左侧导航栏-->
+                <nav class="side-global-menu">
+                    <ul>
+                        <li class="news"><a href="index.html">资讯简报 <span class="side-news-update">02.14</span> </a></li>
+                        <li class="schedule"><a href="schedule.html">播送时刻表</a></li>
+                        <li class="character"><a href="character.html">角色简介</a></li>
+                        <li class="staff"><a href="staff.html">制作人员</a></li>
+                        <li class="moive"><a href="moive.html">视频</a></li>
+                        <li class="music"><a href="music.html">音乐</a></li>
+                        <li class="about-me"><a href="about.html">关于我和这个作品</a></li>
+                    </ul>
+                </nav>
+                <!--下边栏-->
+                <nav class="side-share-menu">
+                    <p class="side-share-title">分享:</p>
+                    <ul>
+                        <li><a href="http://wx.qq.com"><span class="wx-share"></span></a></li>
+                        <li><a href="http://qq.com"><span class="qq-share"></span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!--
+===============================================
+角色部分主体
+===============================================
+-->
+<main>
+    <article class="l-container">
+        <div class="l-container-left"></div>
+        <div class="l-container-right">
+            <div class="l-page">
+                <section>
+                    <!--人物介绍模块 ======================================-->
+                    <div class="inner">
+                        <div class="l-character">
+                            <!--
+                            ==============================================
+                            人物顶部切换模块，重要！！！！
+                            ==============================================
+                            -->
+                            <div class="character-detail">
+                                <!--
+                                ==============================================
+                                头部菜单
+                                ==============================================
+                                -->
+                                <div class="character-menu">
+                                    <li class="character-menu-tomoya"><a href="#character-detail-tomoya"><span class="name">安芸伦也</span><span class="cv">CV:松冈祯丞</span></a></li>
+                                    <li class="character-menu-megumi"><a href="#character-detail-megumi"><span class="name">加藤恵</span><span class="cv">CV:安野希世乃</span></a></li>
+                                    <li class="character-menu-eriri"><a href="#character-detail-eriri"><span class="name small">泽村・スペンサー・英梨梨</span><span class="cv">CV:大西沙织</span></a></li>
+                                    <li class="character-menu-utaha"><a href="#character-detail-utaha"><span class="name">霞之丘诗羽</span><span class="cv">CV:茅野爱衣</span></a></li>
+                                    <li class="character-menu-izumi"><a href="#character-detail-izumi"><span class="name">波岛出海</span><span class="cv">CV:赤﨑千夏</span></a></li>
+                                    <li class="character-menu-michiru"><a href="#character-detail-michiru"><span class="name">冰堂美智留</span><span class="cv">CV:矢作纱友里</span></a></li>
+                                </div>
+                                <div class="character-paging">
+                                    <li class="prev"><a href="#prev"></a></li>
+                                    <!--<li class="back"><a href="#back">CHARACTER TOP</a></li>-->
+                                    <!--取消回到顶部的链接-->
+                                    <li class="back"><a href="javascript:void(0)">CHARACTER TOP</a></li>
+                                    <li class="next"><a href="#next"></a></li>
+                                </div>
+                                <!--
+                                ==============================================
+                                安芸倫也 詳細
+                                ==============================================
+                                -->
+                                <div id="character-detail-tomoya" class="character-detail-box">
+                                    <!-- 盒子右上-->
+                                    <div class="character-detail-box-rt">
+                                        <h3 class="character-detail-name">安芸伦也</h3>
+                                        <p class="character-detail-name-en">Tomoya Aki</p>
+                                        <p class="character-detail-cv"><span>CV</span>松冈祯丞</p>
+                                    </div>
+                                    <!-- 盒子左-->
+                                    <div class="character-detail-box-lt">
+                                        <div class="character-detail-batch"><img src="images/character/chara_tomoya_batch.png" width="225" height="225" alt=""></div>
+                                        <div class="character-detail-visual">
+                                            <div class="main"><img src="images/character/chara_tomoya_vsl.png" alt=""></div>
+                                        </div>
+                                        <div class="character-detail-msg"><img src="images/character/chara_tomoya_msg.png" width="110" height="1031" alt=""></div>
+                                    </div>
+                                    <!-- 盒子右下-->
+                                    <div class="character-detail-box-rb">
+                                        <!-- Sukusho-->
+                                        <ul class="character-detail-ss">
+                                            <!--<li><img src="images/character/chara_ss_tomoya1.gif" width="275" height="155" alt=""></li>-->
+                                            <!--<li><img src="images/character/chara_ss_tomoya2.gif" width="275" height="155" alt=""></li>-->
+                                        </ul>
+                                        <!-- 文本-->
+                                        <p class="character-detail-text">丰之崎学园的三大名人之一。1年级时和老师进行了顽强的谈判，以实现文化节日的动画放映。<br>凭借自己的活力，我们徒劳无功地努力实现我们想做的事情。 这是一个消费型极客，把在兼职工作中节省的金钱灌注到动画和游戏中...</p>
+                                        <!-- 情報-->
+                                        <table class="character-detail-info">
+                                            <tr>
+                                                <th>所属</th>
+                                                <td>私立丰之崎学园2年B组</td>
+                                            </tr>
+                                            <tr>
+                                                <th>生日</th>
+                                                <td>12月18日</td>
+                                            </tr>
+                                            <tr>
+                                                <th>趣味</th>
+                                                <td>动漫，Ranube，漫画，游戏</td>
+                                            </tr>
+                                            <tr>
+                                                <th></th>
+                                                <td>
+                                                    <div class="btn-ura">...?</div>
+                                                    <div class="ura-box">动漫，Ranube，漫画，游戏的传播</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--
+                                ==============================================
+                                加藤恵 詳細
+                                ==============================================
+                                -->
+                                <div id="character-detail-megumi" class="character-detail-box">
+                                    <!-- 盒子右上-->
+                                    <div class="character-detail-box-rt">
+                                        <h3 class="character-detail-name">加藤恵</h3>
+                                        <p class="character-detail-name-en">Megumi Kato</p>
+                                        <p class="character-detail-cv"><span>CV</span>安野希世乃</p>
+                                    </div>
+                                    <!-- 盒子左-->
+                                    <div class="character-detail-box-lt">
+                                        <div class="character-detail-batch"><img src="images/character/chara_megumi_batch.png" width="225" height="225" alt=""></div>
+                                        <div class="character-detail-visual">
+                                            <div class="main"><img src="images/character/chara_megumi_vsl.png" alt=""></div>
+                                            <div class="size"></div>
+                                        </div>
+                                        <div class="character-detail-msg"><img src="images/character/chara_megumi_msg.png" width="110" height="1031" alt=""></div>
+                                    </div>
+                                    <!-- 盒子右下-->
+                                    <div class="character-detail-box-rb">
+                                        <!-- Sukusho-->
+                                        <ul class="character-detail-ss">
+                                            <!--<li><img src="images/character/chara_ss_megumi1.gif" width="275" height="155" alt=""></li>-->
+                                            <!--<li><img src="images/character/chara_ss_megumi2.gif" width="275" height="155" alt=""></li>-->
+                                        </ul>
+                                        <!-- 文本-->
+                                        <p class="character-detail-text">一个非常普通的女孩，本来应该是伦的同学，但并不知道它的存在。 尽管应该一直在说话，但如果您注意到它，您将通过摆弄智能手机来隐藏性能与背景相融合。 如果你仔细观察，你是美丽的，如果你受到邀请，你将拥有那些与你做任何事情的人的优点，但从安全的角度来看，没有标志。</p>
+                                        <!-- 情報-->
+                                        <table class="character-detail-info">
+                                            <tr>
+                                                <th>所属</th>
+                                                <td>私立丰之崎学园2年B组</td>
+                                            </tr>
+                                            <tr>
+                                                <th>生日</th>
+                                                <td>9月23日</td>
+                                            </tr>
+                                            <tr>
+                                                <th>趣味</th>
+                                                <td>购物</td>
+                                            </tr>
+                                            <tr>
+                                                <th></th>
+                                                <td>
+                                                    <div class="btn-ura">...?</div>
+                                                    <div class="ura-box">那么，如果一个前提有一个人们从第一个地方无法分辨的爱好？</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--
+                                ==============================================
+                                澤村・スペンサー・英梨梨 詳細
+                                ==============================================
+                                -->
+                                <div id="character-detail-eriri" class="character-detail-box">
+                                    <!-- 盒子右上-->
+                                    <div class="character-detail-box-rt">
+                                        <h3 class="character-detail-name">泽村・<br>スペンサー・<br>英梨梨</h3>
+                                        <p class="character-detail-name-en">Eriri Spencer Sawamura</p>
+                                        <p class="character-detail-cv"><span>CV</span>大西沙织</p>
+                                    </div>
+                                    <!-- 盒子左-->
+                                    <div class="character-detail-box-lt">
+                                        <!-- 三个大小的按钮-->
+                                        <div class="character-detail-batch"><img src="images/character/chara_eriri_batch.png" width="225" height="225" alt=""></div>
+                                        <div class="character-detail-visual">
+                                            <div class="main"><img src="images/character/chara_eriri_vsl.png" alt=""></div>
+                                            <div class="size"></div>
+                                        </div>
+                                        <div class="character-detail-msg"><img src="images/character/chara_eriri_msg.png" width="110" height="1031" alt=""></div>
+                                    </div>
+                                    <!-- 盒子右下-->
+                                    <div class="character-detail-box-rb">
+                                        <!-- Sukusho-->
+                                        <ul class="character-detail-ss">
+                                            <!--<li><img src="images/character/chara_ss_eriri1.gif" width="275" height="155" alt=""></li>-->
+                                            <!--<li><img src="images/character/chara_ss_eriri2.gif" width="275" height="155" alt=""></li>-->
+                                        </ul>
+                                        <!-- 文本-->
+                                        <p class="character-detail-text">丰之崎学园作为一个为1,2年级的美丽女孩，英国外交官与他的父亲，真正的女士生活在一个高居民的豪宅中。 然而，它的背面主持着非常受欢迎的圈子“利己主义”，一位名叫“柏木惠梨”的新兴插画家画出了18人同人志。<br>其原因是女孩和父亲的母亲有强烈的影响力。</p>
+                                        <!-- 情報-->
+                                        <table class="character-detail-info">
+                                            <tr>
+                                                <th>所属</th>
+                                                <td>
+                                                    私立丰之崎学园2年G组
+                                                    美术部
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>誕生日</th>
+                                                <td>3月20日</td>
+                                            </tr>
+                                            <tr>
+                                                <th>趣味</th>
+                                                <td>绘画鉴赏</td>
+                                            </tr>
+                                            <tr>
+                                                <th></th>
+                                                <td>
+                                                    <div class="btn-ura">...?</div>
+                                                    <div class="ura-box">萌动画，厨房，美丽的女孩插画</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--
+                                ==============================================
+                                霞之丘诗羽 詳細
+                                ==============================================
+                                -->
+                                <div id="character-detail-utaha" class="character-detail-box">
+                                    <!-- 盒子右上-->
+                                    <div class="character-detail-box-rt">
+                                        <h3 class="character-detail-name">霞之丘诗羽</h3>
+                                        <p class="character-detail-name-en">Utaha Kasumigaoka</p>
+                                        <p class="character-detail-cv"><span>CV</span>茅野爱衣</p>
+                                    </div>
+                                    <!-- 盒子左-->
+                                    <div class="character-detail-box-lt">
+                                        <!-- 三个大小的按钮-->
+                                        <div class="character-detail-batch"><img src="images/character/chara_utaha_batch.png" width="225" height="225" alt=""></div>
+                                        <div class="character-detail-visual">
+                                            <div class="main"><img src="images/character/chara_utaha_vsl.png" alt=""></div>
+                                            <div class="size"></div>
+                                        </div>
+                                        <div class="character-detail-msg"><img src="images/character/chara_utaha_msg.png" width="110" height="1031" alt=""></div>
+                                    </div>
+                                    <!-- 盒子右下-->
+                                    <div class="character-detail-box-rb">
+                                        <!-- Sukusho-->
+                                        <ul class="character-detail-ss">
+                                            <!--<li><img src="images/character/chara_ss_utaha1.gif" width="275" height="155" alt=""></li>-->
+                                            <!--<li><img src="images/character/chara_ss_utaha2.gif" width="275" height="155" alt=""></li>-->
+                                        </ul>
+                                        <!-- 文本-->
+                                        <p class="character-detail-text">一个女孩继续保持学年的最高地位作为一个美丽的女孩谁争夺Gyanosaki学园1,2。 背面是一位超流行的拉诺布作家“Kasumi诗人”，其首部作品“Koisuru节拍器”录得巨大的累计50万份的打击。 我通常很安静，因为我正在睡觉或阅读，但是一旦我张嘴巴，我就无法完全展我的手。</p>
+                                        <!-- 情報-->
+                                        <table class="character-detail-info">
+                                            <tr>
+                                                <th>所属</th>
+                                                <td>
+                                                    私立丰之崎学园3年C组<br>
+                                                    不死川神奇文库
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>生日</th>
+                                                <td>1月31日</td>
+                                            </tr>
+                                            <tr>
+                                                <th>趣味</th>
+                                                <td>阅读</td>
+                                            </tr>
+                                            <tr>
+                                                <th></th>
+                                                <td>
+                                                    <div class="btn-ura">...?</div>
+                                                    <div class="ura-box">妄想(本人否定)</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--
+                                ==============================================
+                                波島出海 詳細
+                                ==============================================
+                                -->
+                                <div id="character-detail-izumi" class="character-detail-box">
+                                    <!-- 盒子右上-->
+                                    <div class="character-detail-box-rt">
+                                        <h3 class="character-detail-name">波岛出海</h3>
+                                        <p class="character-detail-name-en">Izumi Hashima</p>
+                                        <p class="character-detail-cv"><span>CV</span>赤﨑千夏</p>
+                                    </div>
+                                    <!-- 盒子左-->
+                                    <div class="character-detail-box-lt">
+                                        <!-- 三个大小的按钮-->
+                                        <div class="character-detail-visual">
+                                            <div class="main"><img src="images/character/chara_izumi_vsl.png" alt=""></div>
+                                            <div class="size"></div>
+                                        </div>
+                                        <div class="character-detail-msg"><img src="images/character/chara_izumi_msg.png" width="110" height="1031" alt="もっともっと絵が上手くなりたい。人を感動させたい。そして……あの人に、勝ちたいな"></div>
+                                    </div>
+                                    <!-- 盒子右下-->
+                                    <div class="character-detail-box-rb">
+                                        <!-- Sukusho-->
+                                        <ul class="character-detail-ss">
+                                            <!--<li><img src="images/character/chara_ss_izumi1.gif" width="275" height="155" alt=""></li>-->
+                                            <!--<li><img src="images/character/chara_ss_izumi2.gif" width="275" height="155" alt=""></li>-->
+                                        </ul>
+                                        <!-- 文本-->
+                                        <p class="character-detail-text">他是一个健康的女孩，就像一个小时候在外面玩童年的女孩，但是他受到Michiya的狂热折磨，所以他完全迷上了这条路。 之后，虽然父母搬迁到名古屋搬家，但是我通过自己的宅男方式推行，并且稳步发展。 然后我会和我的老师Michiya一起回到东京。</p>
+                                        <!-- 情報-->
+                                        <table class="character-detail-info">
+                                            <tr>
+                                                <th>所属</th>
+                                                <td>
+                                                    区立穂野田中学3年A組<br>
+                                                    同人志“花式波”
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>生日</th>
+                                                <td>5月5日</td>
+                                            </tr>
+                                            <tr>
+                                                <th>趣味</th>
+                                                <td>Otome Gay（小爱狂想曲）</td>
+                                            </tr>
+                                            <tr>
+                                                <th></th>
+                                                <td>
+                                                    <div class="btn-ura">...?</div>
+                                                    <div class="ura-box">足球比赛<br>(小学时代嗜好的残余)</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--
+                                ==============================================
+                                氷堂美智留 詳細
+                                ==============================================
+                                -->
+                                <div id="character-detail-michiru" class="character-detail-box">
+                                    <!-- 盒子右上-->
+                                    <div class="character-detail-box-rt">
+                                        <h3 class="character-detail-name">冰堂美智留</h3>
+                                        <p class="character-detail-name-en">Michiru Hyodo</p>
+                                        <p class="character-detail-cv"><span>CV</span>矢作纱友里</p>
+                                    </div>
+                                    <!-- 盒子左-->
+                                    <div class="character-detail-box-lt">
+                                        <div class="character-detail-batch"><img src="images/character/chara_michiru_batch.png" width="225" height="225" alt=""></div>
+                                        <div class="character-detail-visual">
+                                            <div class="main"><img src="images/character/chara_michiru_vsl.png" alt=""></div>
+                                            <div class="size"></div>
+                                        </div>
+                                        <div class="character-detail-msg"><img src="images/character/chara_michiru_msg.png" width="110" height="1031" alt=""></div>
+                                    </div>
+                                    <!-- 盒子右下-->
+                                    <div class="character-detail-box-rb">
+                                        <!-- Sukusho-->
+                                        <ul class="character-detail-ss">
+                                            <!--<li><img src="images/character/chara_ss_michiru1.gif" width="275" height="155" alt=""></li>-->
+                                            <!--<li><img src="images/character/chara_ss_michiru2.gif" width="275" height="155" alt=""></li>-->
+                                        </ul>
+                                        <!-- 文本-->
+                                        <p class="character-detail-text">在Lunya同一天，我出生在同一家医院，一个原始的童年朋友和表弟。 我去了一所女子学校，负责俱乐部活动，但现在我已经组成了一支独立乐队“冰冷的尾巴”，并且每天都在工作。 这与Lunya关系非常密切，虽然过度皮肤运送，但他们根本不关心男女。</p>
+                                        <!-- 情報-->
+                                        <table class="character-detail-info">
+                                            <tr>
+                                                <th>所属</th>
+                                                <td>
+                                                    县立椿姫女子高等学校2年3组<br>
+                                                    独立乐队『icy tail』
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>生日</th>
+                                                <td>12月18日</td>
+                                            </tr>
+                                            <tr>
+                                                <th>趣味</th>
+                                                <td>排球、戏剧，篮球等。 现在乐队。独立乐队</td>
+                                            </tr>
+                                            <tr>
+                                                <th></th>
+                                                <td>
+                                                    <div class="btn-ura">...?</div>
+                                                    <div class="ura-box">摔角</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </article>
+</main>
+<!--
+===============================================
+页脚
+===============================================
+-->
+<footer>
+    <div class="footer">
+        <div class="footer-inner">
+            <ul class="footer-menu">
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="http://tomlao.xin/">我的博客</a></li>
+                <li><a href="http://tomlao.xin:8080/dgut/MyPrj/dropMenu/dropMenu.html">我的其他作品</a></li>
+            </ul>
+            <p class="footer-copyright">
+                &copy;2018 Lao_Heze<br>
+                本网页由Lao_Heze耗时耗力制作肝出来的!<br>
+                不许盗用！！！
+            </p>
+        </div>
+        <div class="footer-chara">
+            <div class="footer-chara-box footer-chara-megumi"><img src="images/ft_bg_megumi.png" alt="" class="pcv"></div>
+            <div class="footer-chara-box footer-chara-eriri"><img src="images/ft_bg_eriri.png" alt="" class="pcv"></div>
+            <div class="footer-chara-box footer-chara-utaha"><img src="images/ft_bg_utaha.png" alt="" class="pcv"></div>
+            <div class="footer-chara-box footer-chara-izumi"><img src="images/ft_bg_izumi.png" alt="" class="pcv"></div>
+            <div class="footer-chara-box footer-chara-michiru"><img src="images/ft_bg_michiru.png" alt="" class="pcv"></div>
+        </div>
+    </div>
+</footer>
+
+<!--
+===============================================
+回到顶部实现
+===============================================
+-->
+<div id="back-to-top">
+    <img src="images/back_to_top.png" alt="">
+</div>
+
+<script src="js/index.js"></script>
+<script src="js/character.js"></script>
+
+<!--使用cdn加载的动态背景-->
+<!--<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>　　-->
+
+</body>
+</html>

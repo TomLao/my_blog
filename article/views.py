@@ -44,3 +44,19 @@ def detail(request, id):
     except Article.DoesNotExist:
         raise Http404
     return render(request,'post.html',{'post':post})
+
+#归档的view,分类归档
+# 视图函数
+# def archives(request):
+#     try:
+#         post_list=Article.objects.all()
+#     except Article.DoesNotExist:
+#         raise Http404
+#     return render(request, 'archives.html', {'post_list': post_list,
+#                                              'error':False})
+def archives(request) :
+    try:
+        post_list = Article.objects.all()
+    except Article.DoesNotExist :
+        raise Http404
+    return render(request,'archives.html',{'post_list':post_list,'error':False})

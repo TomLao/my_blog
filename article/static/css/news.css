@@ -1,0 +1,200 @@
+/*
+--------------------------------------------------
+    资讯页头主体部分css
+--------------------------------------------------
+*/
+.l-container {
+    display: table;
+    width: 100%;
+    min-width: 1300px;
+    overflow: hidden;
+}
+.l-container-left {
+    max-width: 320px;
+    min-width: 90px;
+    box-sizing: border-box;
+    display: table-cell;
+    vertical-align: top;
+}
+.l-container-right {
+    display: table-cell;
+    vertical-align: top;
+}
+.l-page {
+    width: 980px;
+    margin: 0 auto;
+}
+.l-page .inner {
+    padding-top: 115px;
+}
+
+/*标题字体*/
+.page-title {
+    margin: 0 auto 58px;
+    line-height: 1;
+    text-align: center;
+}
+.page-title .head {
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    display: block;
+}
+.page-title .subhead {
+    display: block;
+    margin: 12px 0 0;
+    color: #82909a;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+/*图像展示部分*/
+.l-music {
+    font-size: 0;
+    margin: 0 auto 120px;
+}
+
+/*
+--------------------------------------------------
+    手风琴部分css
+--------------------------------------------------
+*/
+.demo{
+    padding: 2em 0;
+    background: #fff;
+}
+a:hover,a:focus{
+    text-decoration: none;
+    outline: none;
+}
+#accordion:before{
+    content: "";
+    width: 1px;
+    height: 94%;
+    background: #550527;
+    position: absolute;
+    top: 20px;
+    left: 24px;
+    bottom: 20px;
+}
+#accordion .panel{
+    border: 1px solid #d6d6d6;
+    border-radius: 0.2;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin: 0 0 16px 50px;
+    position: relative;
+}
+#accordion .panel:before{
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #688e26 0%,#ff816a 100%);
+    position: absolute;
+    top: 0;
+    left: -2px;
+}
+#accordion .panel-heading{
+    padding: 0;
+    background: #fff;
+    position: relative;
+}
+#accordion .panel-heading .short-intro{
+    color: #000;
+    font-size: 14px;
+
+}
+#accordion .panel-heading:before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    background: #fff;
+    border: 1px solid #550527;
+    position: absolute;
+    top: 50%;
+    left: -48px;
+    transform: translateY(-50%);
+}
+#accordion .panel-title a{
+    display: block;
+    padding: 15px 55px 15px 30px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #550527;
+    border: none;
+    margin: 0;
+    position: relative;
+}
+#accordion .panel-title a:before,
+#accordion .panel-title a.collapsed:before{
+    content: "\f068";
+    font-family: fontawesome;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: normal;
+    color: #688e26;
+    text-align: center;
+    border: 1px solid #688e26;
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    transition: all 0.5s ease 0s;
+}
+#accordion .panel-title a.collapsed:before{ content: "\f067"; }
+#accordion .panel-body{
+    padding: 0 30px 15px;
+    border: none;
+    font-size: 14px;
+    color: #305275;
+    line-height: 28px;
+}
+
+/*侧边更新日期显示块*/
+.l-news-side {
+    float: left;
+    display: inline-block;
+    width: 180px;
+    margin-right: 10px;
+    padding: 25px 0 0 10px;
+    border-top: 1px solid #ededed;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.l-news-side .news-date {
+    margin-bottom: 12px;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+.l-news-side .information {
+    margin-bottom: 55px;
+    font-weight: 300;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+}
+.l-news-side > p {
+    font-size: 10px;
+    font-style: italic;
+}
+
+/*=====================================================================
+::before和::after的content
+用于在css渲染中向元素逻辑上的头部或尾部添加内容。
+这些添加不会出现在DOM中，不会改变文档内容，不可复制，仅仅是在css渲染层加入。
+========================================================================*/
+/*头部字体*/
+.l-container-right:before {
+    content: "资讯";
+    position: absolute;
+    top: -28px;
+    right: -5px;
+    z-index: -10;
+    color: #dde0e4;
+    font-size: 151px;
+    font-weight: 100;
+    letter-spacing: -0.5px;
+    transform: skewX(-12deg);   /*字体倾斜*/
+}

@@ -10,6 +10,12 @@ urlpatterns = [
     # 单条详情
     url(r'^(?P<id>\d+)/$',views.detail,name='detail'),
 
+    #获取链接给手风琴用
+    url(r'^(?P<id>\d+)$',views.detail,name='detail_id'),
+
+    #归档
+    url(r'^archives/$', views.archives, name = 'archives'),
+
     # url(r'^(?P<my_args>\d+)/$',views.detail,name='detail'),
     # url(r'^test/$',views.test,name='test'),
 ]

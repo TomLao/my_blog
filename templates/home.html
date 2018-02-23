@@ -1,43 +1,56 @@
+<!--
+=====================================================
+手风琴块
+=====================================================
+-->
+
 {% extends "base.html" %}
 {% load custom_markdown %}
 {% block content %}
-<div class="posts">
-    {% for post in post_list %} <!--在主页循环显示文章，在article/views。py中设置了post_list为5条一页-->
-    <section class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="{% url "detail" id=post.id %}">{{ post.title }}</a></h2>
-            <p class="post-meta">
-                Time:  <a class="post-author" href="#">{{ post.date_time |date:"Y /m /d"}}</a> <a class="post-category post-category-js" href="#">{{ post.category }}</a>                    </p>
-        </header>
+<div class="jq22-container">
+    <div class="demo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <!--<section>放这里不会可以同时开着两个手风琴-->
+                        <!--在主页循环显示文章，在article/views。py中设置了post_list为5条一页-->
+                        <section>
+                            {% for post in post_list %}
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="heading{{post.id}}">
+                                    <h4 class="panel-title">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{post.id}}" aria-expanded="true" aria-controls="collapse{{post.id}}">
 
-        <div class="post-description">
-            <p>
-                {{ post.content|custom_markdown|truncatewords:8 }}<!--参数为显示的长度-->
-                <!--过滤器的用法贴不出来，详情见：
-                    http://blog.csdn.net/foryouslgme/article/details/52057445
-                -->
-            </p>
+                                            {{ post.title }}<hr>
+                                            <p class="short-intro">
+                                                简介：{{ post.content|truncatewords:2 }}<!--参数为显示的长度-->
+                                            </p>
+
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse{{post.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{post.id}}">
+                                    <div class="panel-body">
+                                        <!--更新日期块-->
+                                        <div class="l-news-side">
+                                            <p class="news-date">{{ post.date_time |date:"Y.m.d"}}</p>
+                                            <p class="pcv information">{{ post.category }}</p>
+                                        </div>
+                                        <div class="col-md-offset-3">
+                                            <p>
+                                                {{ post.content|custom_markdown }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </section>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--当点击这个文章题目时, 会将对应的数据库对象的id传入的url中, 类似于url传参, 不记得的同学可以重新回到前几页翻一下. 这里将数据库对象唯一的id传送给url设置, -->
-        <!--url取出这个id给对应的view中的函数逻辑当做参数. 这样这个id就传入对应的参数中被使用-->
-        <a class="pure-button" href="{% url "detail" id=post.id %}">Read More >>> </a>
-    </section>
-
-    <!--翻页用-->
-    {% endfor %}
-    {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
-    <div>
-        <ul class="pager">
-            {% if post_list.has_previous %}
-            <li><a href="?page={{ post_list.previous_page_number }}">上一页</a></li>
-            {% endif %}
-
-            {% if post_list.has_next %}
-            <li><a href="?page={{ post_list.next_page_number }}">下一页</a></li>
-            {% endif %}
-        </ul>
     </div>
-    {% endif %}
-</div><!-- /.blog-post -->
+</div>
 {% endblock %}
-

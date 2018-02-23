@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     #按照文档的firstapp，这里需要article中建一个urls.py来中转调用，输出全部
+    #注意，这里跟之前的版本不同，或者是我没找到方法，要进行中转！
+    # 添加功能时只需在article目录下配置url
     url(r'', include('article.urls')),
 
     #单条详情

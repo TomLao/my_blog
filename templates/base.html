@@ -1,65 +1,124 @@
-<!--base.html-->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A layout example that shows off a blog page with a list of posts.">
-
-    <title>TomLao Blog</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
-    <link rel="stylesheet" href="http://picturebag.qiniudn.com/blog.css">
-    <link rel="stylesheet" href="http://picturebag.qiniudn.com/monokai.css">  <!--代码高亮，加载高亮库Pygments，背景和字体,高亮失败-->
+    <meta charset="UTF-8">
+    <title>寒假-路人女主-简讯</title>
+    <script src="/static/js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/news.css">
+    <!--<link href="/static/css/bootstrap.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <!--<script src="/static/js/bootstrap.js"></script>-->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="layout" class="pure-g">
-    <div class="sidebar pure-u-1 pure-u-md-1-4">
-        <div class="header">
-            <h1 class="brand-title"><a href="{% url "home" %}">TomLao Blog</a></h1>
-            <h2 class="brand-tagline">写点东西</h2>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="button-success pure-button" href="/">主页</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="button-success pure-button" href="/">归档</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="pure-button" href="https://github.com/TomLao">Github</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="button-error pure-button" href="/admin/">Log in</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="button-success pure-button" href="/">专题</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="button-success pure-button" href="/">About Me</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-
-    <div class="content pure-u-1 pure-u-md-3-4">
-        <div>
-            {% block content %}
-            {% endblock %}
-            <div class="footer">
-                <div class="pure-menu pure-menu-horizontal pure-menu-open">
+<!--
+===============================================
+头部、侧边导航栏
+===============================================
+-->
+<header>
+    <div class="left-side">
+        <div class="inner">
+            <h1 class="side-logo"><a href="index.html"><img src="/static/images/side_logo.png" alt=""></a></h1>
+            <div class="left-side-menu-box">
+                <!--左侧导航栏-->
+                <nav class="side-global-menu">
                     <ul>
-                        <li><a href="/">About Me</a></li>
-                        <li><a href="/">Twitter</a></li>
-                        <li><a href="http://github.com/TomLao">GitHub</a></li>
+                        <li class="news"><a href="index.html">资讯简报 <span class="side-news-update">02.14</span> </a></li>
+                        <li class="schedule"><a href="schedule.html">播送时刻表</a></li>
+                        <li class="character"><a href="/static/character.html">角色简介</a></li>
+                        <li class="staff"><a href="staff.html">制作人员</a></li>
+                        <li class="moive"><a href="moive.html">视频</a></li>
+                        <li class="music"><a href="music.html">音乐</a></li>
+                        <li class="about-me"><a href="about.html">关于我和这个作品</a></li>
                     </ul>
-                </div>
+                </nav>
+                <!--下边栏-->
+                <nav class="side-share-menu">
+                    <p class="side-share-title">分享:</p>
+                    <ul>
+                        <li><a href="http://wx.qq.com"><span class="wx-share"></span></a></li>
+                        <li><a href="http://qq.com"><span class="qq-share"></span></a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
+</header>
+<!--
+===============================================
+主页简讯主体
+===============================================
+-->
+<main>
+    <article class="l-container">
+        <div class="l-container-left"></div>
+        <div class="l-container-right">
+            <div class="l-page">
+                <!--<section>-->
+                    <div class="inner">
+                        <h2 class="page-title"><span class="head">NEWS</span><span class="subhead">最新资讯</span></h2>
+                        <div class="l-news">
+
+                            {% block content %}
+                            {% endblock %}
+
+                        </div>
+                    </div>
+                <!--</section>-->
+            </div>
+        </div>
+    </article>
+
+
+</main>
+<!--
+===============================================
+页脚
+===============================================
+-->
+<footer>
+    <div class="footer">
+        <div class="footer-inner">
+            <ul class="footer-menu">
+                <li><a href="about.html">关于我</a></li>
+                <li><a href="http://tomlao.xin/">我的博客</a></li>
+                <li><a href="http://tomlao.xin:8080/dgut/MyPrj/dropMenu/dropMenu.html">我的其他作品</a></li>
+            </ul>
+            <p class="footer-copyright">
+                &copy;2018 Lao_Heze<br>
+                本网页由Lao_Heze耗时耗力制作肝出来的!<br>
+                不许盗用！！！
+            </p>
+        </div>
+        <div class="footer-chara">
+            <div class="footer-chara-box footer-chara-megumi"><img src="/static/images/ft_bg_megumi.png" alt="" class="pcv"></div>
+            <div class="footer-chara-box footer-chara-eriri"><img src="/static/images/ft_bg_eriri.png" alt="" class="pcv"></div>
+            <div class="footer-chara-box footer-chara-utaha"><img src="/static/images/ft_bg_utaha.png" alt="" class="pcv"></div>
+            <div class="footer-chara-box footer-chara-izumi"><img src="/static/images/ft_bg_izumi.png" alt="" class="pcv"></div>
+            <div class="footer-chara-box footer-chara-michiru"><img src="/static/images/ft_bg_michiru.png" alt="" class="pcv"></div>
+        </div>
+    </div>
+</footer>
+
+<!--
+===============================================
+回到顶部实现
+===============================================
+-->
+<div id="back-to-top">
+    <img src="/static/images/back_to_top.png" alt="">
 </div>
+
+<script src="/static/js/index.js"></script>
+<script src="/static/js/news.js"></script>
+<script type="text/javascript">
+    //第一个手风琴展开
+    $(".panel-collapse:first").addClass("in");
+</script>
+<!--<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>　　-->
 
 </body>
 </html>
