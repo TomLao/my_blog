@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!--这个缩小视图，实现手机端响应式-->
+    <title>资讯-手机版</title>
+    <link rel="stylesheet" href="/static/css/mobile_news.css">
+    <link rel="stylesheet" media="screen and (max-width: 640px), print" href="/static/css/mobile_common.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<header id="header">
+    <div class="holderFix">
+        <nav class="headerNav cf"></nav>
+        <div class="holderFixInner">
+            <div class="menu">
+                <h1 class="logo">
+                    <a href="#">TomLao</a>
+                </h1>
+                <div class="nav-toggle">
+                    <div><span></span><span></span><span></span></div>
+                </div>
+            </div>
+
+            <div class="menuHolder">
+                <div class="inner">
+                    <ul class="nav-tools cf globalNav">
+                        <li class="news"><a href="#"><span class="my-hide">博客</span></a></li>
+                        <li class="news"><a href="#"><span class="my-hide">归档</span></a></li>
+                    </ul>
+                    <nav class="nav-global cf">
+                        <ul>
+                            <li class="m-list"><a href="#"><span class="spOnly">aabb</span></a></li>
+                            <li class="m-category"><a href="#"><span class="spOnly">ccdd</span></a></li>
+                            <li class="m-search">
+                                <a href="#"><span class="spOnly">商品検索</span></a>
+                                <div class="searchBoxHolder">
+                                    <form class="input-group" action="/search/" method="get">
+                                        <input type="text" class="searchBox" name="keyword" placeholder=""
+                                               autocomplete="off" size="10">
+                                        <input type="submit" class="btn-submit" value="検索" tabindex="22">
+                                    </form>
+                                    <ul class="searchList"></ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--<div style="height: 2000px" class="content02"></div>-->
+
+<main>
+    <section>
+
+        {% block content %}
+        {% endblock %}
+
+    </section>
+</main>
+
+
+<footer>
+    <div class="footer">
+        <div class="footer-inner">
+            <ul class="footer-menu">
+                <li><a href="Mailto:1026022953@qq.com">联系我 ↓↓↓<p>1026022953@qq.com</p></a></li>
+                <li><a href="http://tomlao.xin/">我的博客</a></li>
+                <li><a href="http://tomlao.xin:8080/dgut/MyPrj/dropMenu/dropMenu.html">我的其他作品</a></li>
+            </ul>
+            <p class="footer-copyright">
+                &copy;2018 TomLao<br>
+                本网页由TomLao耗时耗力制作肝出来的!<br>
+                不许盗用！！！
+            </p>
+        </div>
+        <div class="footer-chara">
+            <div class="footer-chara-box footer-chara-megumi"><img src="/static/images/ft_bg_megumi%20(1).png" alt=""
+                                                                   class="pcv"></div>
+            <div class="footer-chara-box footer-chara-eriri"><img src="/static/images/ft_bg_eriri%20(1).png" alt="" class="pcv">
+            </div>
+            <div class="footer-chara-box footer-chara-utaha"><img src="/static/images/ft_bg_utaha%20(1).png" alt="" class="pcv">
+            </div>
+            <div class="footer-chara-box footer-chara-izumi"><img src="/static/images/ft_bg_izumi%20(1).png" alt="" class="pcv">
+            </div>
+            <div class="footer-chara-box footer-chara-michiru"><img src="/static/images/ft_bg_michiru%20(1).png" alt=""
+                                                                    class="pcv"></div>
+        </div>
+    </div>
+</footer>
+
+
+<div id="back-to-top">
+    <img src="/static/images/top_mini.png" alt="">
+</div>
+
+<script src="https://www.aniplexplus.com/assets/js/plugin.js"></script>
+<script src="https://www.aniplexplus.com/assets/js/common.js?v20180314"></script>
+<script src="/static/js/mobile_index.js"></script>
+</body>
+</html>

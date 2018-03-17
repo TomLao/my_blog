@@ -1,0 +1,152 @@
+/*
+--------------------------------------------------
+    资讯页头主体部分css
+--------------------------------------------------
+
+/*
+--------------------------------------------------
+    手风琴部分css
+--------------------------------------------------
+*/
+.demo{
+    padding: 16px 0;
+    background: #fff;
+}
+a:hover,a:focus{
+    text-decoration: none;
+    outline: none;
+}
+#accordion .panel{
+    border: 1px solid #d6d6d6;
+    /*border-radius: 0.5;*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin: 0 0 16px 0;
+    position: relative;
+}
+#accordion .panel:before{
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #688e26 0%,#ff816a 100%);
+    position: absolute;
+    top: 0;
+    left: -2px;
+}
+#accordion .panel-heading{
+    padding: 0;
+    background: #fff;
+    position: relative;
+}
+#accordion .panel-title a{
+    display: block;
+    padding: 10px 30px 10px 10px;
+    font-size: 26px;
+    font-weight: 500;
+    color: #550527;
+    border: none;
+    margin: 0;
+    position: relative;
+}
+#accordion .panel-title a:before,
+#accordion .panel-title a.collapsed:before{
+    content: "\f068";
+    font-family: fontawesome;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: normal;
+    color: #688e26;
+    text-align: center;
+    border: 1px solid #688e26;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    transition: all 0.5s ease 0s;
+}
+#accordion .panel-title a.collapsed:before{ content: "\f067"; }
+#accordion .panel-body{
+    padding: 0 10px 15px;
+    border: none;
+    font-size: 14px;
+    color: #305275;
+    line-height: 28px;
+    border-top: 1px solid #ededed;
+
+}
+
+/*侧边更新日期显示块*/
+.l-news-side {
+    /*float: left;*/
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0 0px 0px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.l-news-side .news-date {
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.l-news-side > p {
+    font-size: 13px;
+    font-style: italic;
+}
+
+/*  页脚  --------------------------------------------*/
+.footer {
+    line-height: 0;
+    position: relative;
+    white-space: nowrap;
+    /*padding: 160px 0 0 60px;*/
+}
+.footer .footer-inner {
+    position: static;
+    /*left: 60px;*/
+    /*bottom: 50px;*/
+    padding:40px;
+padding-top: 0px;
+}
+/*  页脚声明和人物图书自动生成 ---------------*/
+.footer-chara{
+    text-align: right;
+    line-height: 0;
+}
+.footer-chara img.pcv {
+    display: inline !important;
+    width: 100%;
+}
+.footer-chara-box {
+    text-align: right;
+    display: none;
+}
+.footer-chara-box.on {
+    display: block;
+}
+.footer-menu {
+    overflow: hidden;
+    padding: 30px 0;
+}
+.footer-menu li {
+    font-size: 13px;
+    line-height: 1;
+    /*letter-spacing: 0.5px;*/
+    float: left;
+    margin: 0 15px 0 0;
+}
+.footer-btn-first a, .footer-menu a {
+    opacity: 1;
+    transition: 0.2s;
+}
+.footer-btn-first a:hover, .footer-menu a:hover {
+    opacity: 0.6;
+    transition: 0.2s;
+}
+.footer-copyright {
+    color: #82909a;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+}

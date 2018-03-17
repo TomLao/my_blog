@@ -1,0 +1,417 @@
+@charset "utf-8";
+/* ============================================================
+
+    共用主体框架
+
+============================================================ */
+
+html, body, div, p,
+dl, dt ,dd,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+form, fieldset, input, textarea,
+pre, blockquote,
+th, td {
+    margin: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset, img {
+    border: none;
+}
+input, textarea, select {
+    font-size: 100%;
+}
+img {
+    vertical-align: top;
+}
+
+address, caption, cite, code, dfn, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+em, strong, th {
+    font-style: normal;
+    font-weight: bold;
+}
+ol, ul {
+    list-style: none;
+}
+caption, th {
+    text-align: left;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: bold;
+    /*line-height: 1.4;*/
+}
+q:before, q:after {
+    content: '';
+}
+abbr, acronym {
+    border: none;
+}
+
+* html .cf {
+    zoom: 1;
+}
+*+html .cf {
+    zoom: 1;
+}
+.cf:after {
+    content: '';
+    display: block;
+    clear: both;
+    font-size: 0;
+}
+*{
+    box-sizing: border-box;
+}
+html,body { height: 100%; }
+
+body {
+    /*background-color: #f1f1f1;*/
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+#header a:hover, #header a:active,
+#footer a:hover, #footer a:active,
+.listType1 a:hover, .listType1 a:active,
+.listType2 a:hover, .listType2 a:active,
+.listType3 a:hover, .listType3 a:active,
+.scrollItemList a:hover, .scrollItemList a:active,
+.breadcrumb a:hover, .breadcrumb a:active
+{
+    color: #29b6f6;
+}
+
+
+
+/* ============================================================
+    主体部分
+============================================================ */
+/*背景图片*/
+/*.content02 {*/
+    /*background: url(../images/bg01.png) repeat;*/
+    /*background-size: contain;*/
+/*}*/
+
+/*===============================================*/
+/*回到顶部实现  css*/
+/*===============================================*!*/
+#back-to-top {
+    cursor: pointer;
+    position: fixed;
+    right: -20px;
+    top:-900px;
+    z-index: 2;
+    width: 70px;
+    height: 900px;
+    transition: all .5s ease-in-out;
+    opacity: 0.8;
+}
+
+
+body {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.4;
+}
+/* -----------------------------------
+    header头部
+----------------------------------- */
+#header{
+    z-index: 21;
+    width: 100%;
+    position: relative;
+}
+
+#header .holderFix{
+    width: 100%;
+    height:auto;
+    position: relative;
+    z-index:20;
+    left:0 !important;
+    top:0 !important;
+}
+/*要*/
+#header .holderFix .menu{
+    position:relative;
+    background: url(../images/bg_body.png) center top repeat;
+    z-index:300;
+    height: 55px;
+}
+#header .holderFix .menu:after{
+    clear:both;
+    content:"";
+    display:block;
+}
+
+#header .holderFix .menu > .cart{ float: right; width: 15.625%; }
+#header img{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+#header a{ color: #000; text-decoration:none; }
+#header .logo a{
+    z-index:3;
+    display:block;
+    font-size: 25px;
+    height:auto;
+    /*width: 41.25%;*/
+    max-width:264px;
+    position:absolute;
+    left:50%;top:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+#header .nav-toggle{
+    position: absolute;
+    left: 3.25%;
+    top: 50%;
+    -webkit-transform: translate(0,-50%);
+    -moz-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    width: 7.5%;
+    height: 60%;
+    z-index: 21;
+}
+#header .nav-toggle div {
+    position: relative;
+    width: 100%;
+    height:100%;
+}
+#header .nav-toggle div:before{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+    opacity: 1;
+    width: 100%;
+    height: 21%;
+    background: url("../images/sp-menu.png") 50% 50% no-repeat;
+    background-size: 100% 100%;
+}
+
+#header .nav-toggle span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #333;
+    left: 0;
+    -webkit-transition: .35s ease-in-out;
+    -moz-transition: .35s ease-in-out;
+    transition: .35s ease-in-out;
+}
+#header .nav-toggle span:nth-child(1) {top: 10%;}
+#header .nav-toggle span:nth-child(2) {top: 30%;}
+#header .nav-toggle span:nth-child(3) {top: 50%;}
+
+
+/* #nav-toggle 切り替えアニメーション */
+#header.open .nav-toggle span:nth-child(1) {
+    top:  50%;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#header.open .nav-toggle span:nth-child(2) {
+    opacity:0;
+}
+#header.open .nav-toggle span:nth-child(3) {
+    top:  50%;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+#header.open .nav-toggle div:before{
+    opacity: 0;
+}
+#header .holderFix .menuHolder{
+    z-index:19;
+    background-color: #e7e7e7;
+    width: 100%;
+    position:absolute;
+    left: 0;
+    top:-500px;
+    box-sizing:border-box;
+
+    -webkit-transition: all 500ms cubic-bezier(0.800, 0.005, 0.285, 1.000);
+    -moz-transition: all 500ms cubic-bezier(0.800, 0.005, 0.285, 1.000);
+    -o-transition: all 500ms cubic-bezier(0.800, 0.005, 0.285, 1.000);
+    transition: all 500ms cubic-bezier(0.800, 0.005, 0.285, 1.000);
+}
+
+#header .nav-tools{
+    padding: 3.125% 3.125% 0;
+}
+#header .nav-tools li{
+    float:left;
+    width: 49.4%;
+    margin:0.3%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #fff;
+    padding:1em 0;
+}
+#header .nav-tools li a{
+    box-sizing:border-box;
+    display: block;
+    position: relative;
+    text-align: left;
+    height: 25px;
+    line-height: 25px;
+}
+/* 要的，箭头 */
+#header .nav-tools li.news{
+    width: 99.4%;
+    background: #fff url(../images/header_arrow.png) 96% center no-repeat;
+    background-size: 10px auto;
+    padding-right: 5%;
+    box-sizing: border-box;
+}
+#header .nav-tools li a .num{
+    background-color: #df4363;
+    width: 20px;
+    height: 20px;
+    border-radius:10px;
+    display: block;
+    position:absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 9px;
+    text-align: center;
+    color: #fff;
+    line-height: 20px;
+}
+#header .nav-tools li a .my-hide{
+    display:inline-block;
+    height:25px;
+    line-height: 25px;
+    vertical-align: bottom;
+}
+#header .nav-tools li.history a{
+    text-align: center;
+    background: url(../images/header_arrow.png) 92% center no-repeat;
+    background-size: 10px auto;
+    padding-right: 10%;
+}
+#header .nav-tools li.news a{
+    text-align: center;
+    /* background: url(../img/sp/header_arrow.png) 92% center no-repeat; */
+    background-size: 10px auto;
+    padding-right: 10%;
+}
+#header input.text{
+    padding: 0.8em;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px auto;
+    border: none;
+    font-size: 16px;
+    border-radius: 0;
+}
+#header .nav-tools li.member{ display: none;}
+
+#header .nav-global{
+    padding: 3.125%;
+}
+#header .nav-global > ul > li{
+    width: 99.4%;
+    margin:0.3%;
+    background: #d7d7d7 url(../images/header_arrow.png) 96% center no-repeat;
+    background-size: 10px auto;
+    padding-right: 5%;
+    box-sizing: border-box;
+}
+
+#header .nav-global > ul > li > a{
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    padding:1em 0;
+    text-align: center;
+}
+#header .nav-global li.m-search > a{ display: none; }
+#header .nav-global li.m-search{
+    background: #d7d7d7;
+    padding: 2.5%;
+}
+
+/* -----------------------------------
+    搜索框
+----------------------------------- */
+.searchBoxHolder{
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.searchBoxHolder form{
+    display: block;
+    position: relative;
+}
+.searchBoxHolder .searchBox{
+    border:none;
+    box-sizing:border-box;
+    width: 100%;
+    padding:0.5em 1.8em 0.5em 0.5em;
+    height: 2.2em;
+    font-size: 16px;
+    background: #FFF url(../images/icon_search.png) 97% center no-repeat;
+    background-size: 1em;
+    text-align: center;
+}
+.searchBoxHolder .btn-submit{
+    opacity:0;
+    width: 2.5em;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    right: 0;
+    cursor:pointer;
+    z-index:1;
+}
+.searchBoxHolder .searchList{
+    display: none;
+    width: 100%;
+}
+.searchBoxHolder .searchList.show{
+    display: block;
+    margin-top: 1px;
+}
+.searchBoxHolder .searchList li{
+    margin-bottom: 1px;
+    background-color: #fff;
+}
+.searchBoxHolder .searchList li a{
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    display: block;
+    padding:0.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}
